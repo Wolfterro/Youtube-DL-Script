@@ -19,3 +19,5 @@ O script se encontra em 3 versões diferentes:
 - Linux Mint 17.1 Cinnamon x86/x64 - Bash/Python2<br />
 - Debian Jessie 8.2 x86 - Bash/Python2<br />
 - Arch Linux x86/x64 - Bash/Python2/Python3<br />
+
+###### Estão disponíveis também as versões anteriores do script em sua versão para o Bash na pasta 'old'. Não recomendo utilizá-los, já que uma nova versão mais atualizada se encontra na pasta 'latest'.
