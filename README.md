@@ -1,9 +1,9 @@
 # Youtube-DL-Script:
-#### Script para Youtube-DL: Baixar Vídeos e Músicas em Diversos Formatos <br />
+#### Script para [Youtube-DL](https://github.com/rg3/youtube-dl/): Baixar Vídeos e Músicas em Diversos Formatos <br />
 
 ### Descrição:
 
-###### Decidi criar este script para facilitar a minha vida na hora de digitar os comandos necessários na hora de usar o Youtube-DL. Não mais será necessário digitar o link inteiro do youtube ou o comando inteiro do programa para conseguir o vídeo no formato que deseja. <br />
+###### Decidi criar este script para facilitar a minha vida na hora de digitar os comandos necessários na hora de usar o [Youtube-DL](https://github.com/rg3/youtube-dl/). Não mais será necessário digitar o link inteiro do youtube ou o comando inteiro do programa para conseguir o vídeo no formato que deseja. <br />
 
 ###### Este script não foi feito para ser distribuído, já que falta muitas outras opções disponíveis no Youtube-DL e que muito provavelmente não serão adicionados ao script. Mas precisei de um lugar para hospedá-los e compartilhá-los, se assim for necessário.
 
