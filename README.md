@@ -44,4 +44,25 @@ O script se encontra em 3 versões diferentes:
 
 ###### É necessário também que o programa ffmpeg ou libav esteja instalado no sistema, ele será responsável pelas conversões de vídeo e áudio se assim forem necessárias. Certifique-se de possuir uma versão atualizada de um destes programas.<br />
 
-###### Se preferir usar as versões escritas em Python, certifique-se de usar a versão correta com relação a versão instalada em seu computador, **o script em Python 3 não funcionará se você apenas tiver o Python 2 instalado em seu sistema e vice-versa!**
+###### Se preferir usar as versões escritas em Python, certifique-se de usar a versão correta com relação a versão instalada em seu computador, **o script em Python 3 não funcionará se você apenas tiver o Python 2 instalado em seu sistema e vice-versa!**<br />
+
+### Download:
+
+###### Usuários Linux (e talvez OSX) poderão baixar o script usando o comando 'wget' e dando as devidas permissões de execução com o comando 'chmod':
+
+##### Bash (Unix Shell):
+
+    wget https://raw.github.com/Wolfterro/Youtube-DL-Script/master/Youtube-DL-Script.bash
+    chmod +x Youtube-DL-Script.bash
+
+##### Python 2.7:
+
+    wget https://raw.github.com/Wolfterro/Youtube-DL-Script/master/Youtube-DL-Script-Python2.py
+    chmod +x Youtube-DL-Script-Python2.py
+
+##### Python 3.x:
+
+    wget https://raw.github.com/Wolfterro/Youtube-DL-Script/master/Youtube-DL-Script-Python3.py
+    chmod +x Youtube-DL-Script-Python3.py
+
+###### Os scripts localizados na área principal da branch são as versões mais atualizadas do script. Para utilizar as versões antigas, vá até a pasta 'old' da linguagem desejada e lá estarão as versões mais antigas do script.
