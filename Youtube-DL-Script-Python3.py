@@ -69,7 +69,7 @@ def video_function_path():
 			print("")
 			print("A pasta 'Vídeos' não existe! Deseja criá-la? [S/N]")
 			CREATEV = input("Digite 'S' para sim ou 'N' para não: ")
-			CREATEV.upper()
+			CREATEV = CREATEV.upper()
 			#---------------------------------------------
 			if CREATEV == "S":
 				os.chdir(expanduser("~/"))
@@ -121,7 +121,7 @@ def audio_function_path():
 			print("")
 			print("A pasta 'Música' não existe! Deseja criá-la? [S/N]")
 			CREATEM = input("Digite 'S' para sim ou 'N' para não: ")
-			CREATEM.upper()
+			CREATEM = CREATEM.upper()
 			#---------------------------------------------
 			if CREATEM == "S":
 				os.chdir(expanduser("~/"))
