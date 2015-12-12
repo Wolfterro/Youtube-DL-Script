@@ -23,7 +23,7 @@ O script se encontra em 4 versões diferentes:
 - Debian Jessie 8.2 x86 - Bash/Python 2.7<br />
 - Arch Linux x86/x64 - Bash/Python 2.7/Python 3.x/Ruby<br />
 
-###### Estão disponíveis também as versões anteriores do script em sua versão para o Bash na pasta 'old'. Não recomendo utilizá-los, já que uma nova versão mais atualizada se encontra na pasta 'latest'.<br />
+###### Estão disponíveis também as versões anteriores do script em suas respectivas linguagens na pasta 'old'. Não recomendo utilizá-los, já que uma nova versão mais atualizada se encontra na área principal do repositório.<br />
 
 ### Requisitos:
 
