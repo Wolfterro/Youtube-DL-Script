@@ -262,7 +262,7 @@ end
 def audio_function_wav()
 	#----------------------------------------------------
 	cmd = "youtube-dl --extract-audio --prefer-avconv --audio-format wav https://www.youtube.com/watch?v=" + $id
-	puts "Baixando Vídeo e Realizando Conversão..."
+	puts "Baixando Áudio e Realizando Conversão..."
 	puts""
 	puts %x( #{cmd} )
 	#----------------------------------------------------
