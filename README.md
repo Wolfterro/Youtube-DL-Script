@@ -19,7 +19,7 @@ O script se encontra em 4 versões diferentes:
 ###### Como é possível ver, o script foi criado pensando na plataforma Linux (e talvez OSX, mas não tenho como testá-lo para ter certeza de que funciona) e portanto poderá não funcionar na plataforma Windows. Como este é um script para ser executado pelo terminal, a plataforma Windows não estava nos meus planos.
 
 #### Testado em / Versões testadas:
-- Linux Mint 17.1 Cinnamon x86/x64 - Bash/Python 2.7<br />
+- Linux Mint 17.1 Cinnamon x86/x64 - Bash/Python 2.7/Python 3.x/Ruby<br />
 - Debian Jessie 8.2 x86 - Bash/Python 2.7<br />
 - Arch Linux x86/x64 - Bash/Python 2.7/Python 3.x/Ruby<br />
 
