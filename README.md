@@ -29,6 +29,7 @@ O script se encontra em 4 versões diferentes:
 
 ##### Bash (Unix Shell):
 - Youtube-DL<br />
+- Bash<br />
 - ffmpeg / libav-tools<br />
 
 ##### Python 2.7:
