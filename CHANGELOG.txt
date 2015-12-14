@@ -1,0 +1,48 @@
+Youtube-DL-Script
+=================
+
+Script para Youtube-DL: Baixar Vídeos e Músicas em Diversos Formatos
+--------------------------------------------------------------------
+
+CHANGELOG:
+==========
+
+VERSÃO 1.6.0 - Bash / Python2 / Python3 / Ruby:
+- Adicionado modo-repetição no script! Ao final de uma operação do script, ele irá perguntar se deseja fazer outra.
+- Corrigido erro grave ao receber input do usuário, fazendo com que realize uma ação oposta ao que foi indicado pelo usuário. --- Bash Apenas
+- Corrigido erro de codificação do script. --- Ruby Apenas
+
+#-------------------------------------------------------------------------------------------------------------------
+
+VERSÃO 1.5.0 - Bash / Python2 / Python3 / Ruby:
+- Adicionado Script em novas linguagens de programação: Python 2.x, Python 3.x e Ruby.
+- Formatos de Conversão adicionados ao script! As primeiras opções de vídeo do script tentarão resgatar o vídeo do Youtube em seu formato nativo, enquanto os formatos de conversão irão chamar o ffmpeg / libav para realizar a conversão do arquivo de vídeo.
+
+#-------------------------------------------------------------------------------------------------------------------
+
+VERSÃO 1.4.0 - Bash:
+- Adicionado 3 novos formatos ao script! .mkv, .webm e .avi! Estes formatos necessitam de conversão com o ffmpeg / libav.
+- Adicionado função de atualização do Youtube-DL ao script! Ao usar esta opção, ele irá chamar o comando "youtube-dl --update" para atualizar o programa.
+
+#-------------------------------------------------------------------------------------------------------------------
+
+VERSÃO 1.3.0 - Bash:
+- Pequenos bugs corrigidos.
+- Pasta preferencial para Músicas deverá ter o nome 'Música'
+
+#-------------------------------------------------------------------------------------------------------------------
+
+VERSÃO 1.2.0 - Bash:
+- Melhor estrutura na codificação do script.
+
+#-------------------------------------------------------------------------------------------------------------------
+
+VERSÃO 1.1.0 - Bash:
+- Verificação das pastas 'Músicas' e 'Vídeos'. Se estas pastas existirem, poderão ser utilizadas para armazenar o arquivo baixado. Caso as pastas não existam, você terá a opção de criá-las ou não. Se não optar pelas pastas, o arquivo baixado será armazenado na pasta atual do script!
+
+#-------------------------------------------------------------------------------------------------------------------
+
+VERSÃO 1.0.0 - Bash:
+- Versão inicial do script.
+
+#-------------------------------------------------------------------------------------------------------------------
