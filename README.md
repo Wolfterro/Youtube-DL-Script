@@ -25,6 +25,8 @@ O script se encontra em 4 versões diferentes:
 
 ###### Estão disponíveis também as versões anteriores do script em suas respectivas linguagens na pasta 'old'. Não recomendo utilizá-los, já que uma nova versão mais atualizada se encontra na área principal do repositório.<br />
 
+#### [Confira aqui o changelog do script para maiores informações sobre diferentes versões.](https://raw.github.com/Wolfterro/Youtube-DL-Script/master/CHANGELOG.txt)<br />
+
 ### Requisitos:
 
 ##### Bash (Unix Shell):
