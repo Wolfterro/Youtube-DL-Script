@@ -15,25 +15,28 @@ youtube_dl_script() {
 	#---------------------------------------------------
 	repeat_script(){
 		echo ""
-		echo "Deseja realizar outra operação com o script?"
-		echo "(1) Sim"
-		echo "(2) Não"
-		echo ""
+		echo "Deseja realizar outra operação com o script? [S/N]"
+		echo "=================================================="
 		read REPEAT
-		if [[ $REPEAT -eq 1 ]]; then
-			clear
-			youtube_dl_script
-		elif [[ $REPEAT -eq 2 ]]; then
-			echo ""
-			echo "Saindo..."
-			echo ""
-			sleep 3
-		else
-			echo ""
-			echo "Saindo..."
-			echo ""
-			sleep 3
-		fi
+		REPEATM="${REPEAT^^}"
+
+		case "$REPEATM" in
+			"S")
+				clear
+				youtube_dl_script
+				;;
+			"N")
+				echo ""
+				echo "Saindo..."
+				echo ""
+				sleep 3
+				;;
+			*)
+				echo ""
+				echo "Esta não é uma opção válida! Saindo..."
+				echo ""
+				sleep 3
+		esac
 	}
 	#---------------------------------------------------
 
@@ -93,27 +96,30 @@ youtube_dl_script() {
 				echo ""
 			else
 				echo ""
-				echo "A pasta 'Vídeos' não existe! Deseja criá-la?"
-				echo "(1) Sim"
-				echo "(2) Não"
-				echo ""
+				echo "A pasta 'Vídeos' não existe! Deseja criá-la? [S/N]"
+				echo "=================================================="
 				read CREATEV
+				CREATEVM="${CREATEV^^}"
 				#---------------------------------------------
-				if [[ $CREATEV -eq 1 ]]; then
+				case "$CREATEVM" in
+				"S")
 					mkdir ~/Vídeos
 					cd ~/Vídeos
 					echo ""
 					echo "A pasta 'Vídeos' foi criada e selecionada!"
 					echo ""
-				elif [[ $CREATEV -eq 2 ]]; then
+					;;
+				"N")
 					echo ""
 					echo "Neste caso, a pasta atual do script será selecionada!"
 					echo ""
-				else
+					;;
+				*)
 					echo ""
 					echo "Neste caso, a pasta atual do script será selecionada!"
 					echo ""
-				fi
+					;;
+				esac
 				#----------------------------------------------
 			#--------------------------------------------------
 			fi
@@ -154,27 +160,30 @@ youtube_dl_script() {
 				echo ""
 			else
 				echo ""
-				echo "A pasta 'Música' não existe! Deseja criá-la?"
-				echo "(1) Sim"
-				echo "(2) Não"
-				echo
+				echo "A pasta 'Música' não existe! Deseja criá-la? [S/N]"
+				echo "=================================================="
 				read CREATEM
+				CREATEMM="${CREATEM^^}"
 				#---------------------------------------------
-				if [[ $CREATEM -eq 1 ]]; then
+				case "$CREATEMM" in
+				"S")
 					mkdir ~/Música
 					cd ~/Música
 					echo ""
 					echo "A pasta 'Música' foi criada e selecionada!"
 					echo ""
-				elif [[ $CREATEM -eq 2 ]]; then
+					;;
+				"N")
 					echo ""
 					echo "Neste caso, a pasta atual do script será selecionada!"
 					echo ""
-				else
+					;;
+				*)
 					echo ""
 					echo "Neste caso, a pasta atual do script será selecionada!"
 					echo ""
-				fi
+					;;
+				esac
 				#----------------------------------------------
 			#--------------------------------------------------
 			fi
