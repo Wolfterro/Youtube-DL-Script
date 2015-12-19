@@ -8,6 +8,11 @@
 #---------------------------------------------------
 
 #---------------------------------------------------
+# Localização do script
+#---------------------------------------------------
+$location_script = Dir.pwd
+
+#---------------------------------------------------
 # Função Principal: O script
 #---------------------------------------------------
 def youtube_dl_script()
@@ -99,6 +104,7 @@ def youtube_dl_script()
 					puts "A pasta 'Vídeos' foi criada e selecionada!"
 					puts ""
 				else
+					Dir.chdir (File.expand_path($location_script))
 					puts ""
 					puts "Neste caso, a pasta atual do script será selecionada!"
 					puts ""
@@ -107,6 +113,7 @@ def youtube_dl_script()
 			end
 			#--------------------------------------------------
 		else
+			Dir.chdir (File.expand_path($location_script))
 			puts ""
 			puts "A pasta atual do script foi selecionada!"
 			puts ""
@@ -152,6 +159,7 @@ def youtube_dl_script()
 					puts "A pasta 'Música' foi criada e selecionada!"
 					puts ""
 				else
+					Dir.chdir (File.expand_path($location_script))
 					puts ""
 					puts "Neste caso, a pasta atual do script será selecionada!"
 					puts ""
@@ -160,6 +168,7 @@ def youtube_dl_script()
 			end
 			#--------------------------------------------------
 		else
+			Dir.chdir (File.expand_path($location_script))
 			puts ""
 			puts "A pasta atual do script foi selecionada!"
 			puts ""

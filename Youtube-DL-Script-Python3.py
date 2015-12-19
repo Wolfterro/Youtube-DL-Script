@@ -12,6 +12,11 @@ os.path.expanduser("~")
 #---------------------------------------------------
 
 #---------------------------------------------------
+# Localização do script
+#---------------------------------------------------
+location_script = os.getcwd()
+
+#---------------------------------------------------
 # Função Principal: O script
 #---------------------------------------------------
 def youtube_dl_script():
@@ -101,12 +106,14 @@ def youtube_dl_script():
 					print("A pasta 'Vídeos' foi criada e selecionada!")
 					print("")
 				else:
+					os.chdir(expanduser(location_script))
 					print("")
 					print("Neste caso, a pasta atual do script será selecionada!")
 					print("")
 				#----------------------------------------------
 			#--------------------------------------------------
 		else:
+			os.chdir(expanduser(location_script))
 			print("")
 			print("A pasta atual do script foi selecionada!")
 			print("")
@@ -153,12 +160,14 @@ def youtube_dl_script():
 					print("A pasta 'Música' foi criada e selecionada!")
 					print("")
 				else:
+					os.chdir(expanduser(location_script))
 					print("")
 					print("Neste caso, a pasta atual do script será selecionada!")
 					print("")
 				#----------------------------------------------
 			#--------------------------------------------------
 		else:
+			os.chdir(expanduser(location_script))
 			print("")
 			print("A pasta atual do script foi selecionada!")
 			print("")

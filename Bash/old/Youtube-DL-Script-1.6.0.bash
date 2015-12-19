@@ -7,6 +7,11 @@
 #---------------------------------------------------
 
 #---------------------------------------------------
+# Localização do script
+#---------------------------------------------------
+LOCATION_SCRIPT=$(pwd)
+
+#---------------------------------------------------
 # Função Principal: O script
 #---------------------------------------------------
 youtube_dl_script() {
@@ -110,11 +115,13 @@ youtube_dl_script() {
 					echo ""
 					;;
 				"N")
+					cd $LOCATION_SCRIPT
 					echo ""
 					echo "Neste caso, a pasta atual do script será selecionada!"
 					echo ""
 					;;
 				*)
+					cd $LOCATION_SCRIPT
 					echo ""
 					echo "Neste caso, a pasta atual do script será selecionada!"
 					echo ""
@@ -124,6 +131,7 @@ youtube_dl_script() {
 			#--------------------------------------------------
 			fi
 		else
+			cd $LOCATION_SCRIPT
 			echo ""
 			echo "A pasta atual do script foi selecionada!"
 			echo ""
@@ -174,11 +182,13 @@ youtube_dl_script() {
 					echo ""
 					;;
 				"N")
+					cd $LOCATION_SCRIPT
 					echo ""
 					echo "Neste caso, a pasta atual do script será selecionada!"
 					echo ""
 					;;
 				*)
+					cd $LOCATION_SCRIPT
 					echo ""
 					echo "Neste caso, a pasta atual do script será selecionada!"
 					echo ""
@@ -188,6 +198,7 @@ youtube_dl_script() {
 			#--------------------------------------------------
 			fi
 		else
+			cd $LOCATION_SCRIPT
 			echo ""
 			echo "A pasta atual do script foi selecionada!"
 			echo ""
