@@ -9,6 +9,7 @@ CHANGELOG:
 
 VERSÃO 1.6.0 - Bash / Python2 / Python3 / Ruby:
 - Adicionado modo-repetição no script! Ao final de uma operação do script, ele irá perguntar se deseja fazer outra.
+- Corrigido erro de localização da pasta atual do script após ter feito uma operação onde o arquivo tenha sido salvo na pasta 'Música' ou 'Vídeos'.
 - Corrigido erro grave ao receber input do usuário, fazendo com que realize uma ação oposta ao que foi indicado pelo usuário. --- Bash Apenas
 - Corrigido erro de codificação do script. --- Ruby Apenas
 
