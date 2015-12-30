@@ -63,20 +63,24 @@ O script se encontra em 4 versões diferentes:
 
     wget https://raw.github.com/Wolfterro/Youtube-DL-Script/master/Youtube-DL-Script.bash
     chmod +x Youtube-DL-Script.bash
+    ./Youtube-DL-Script.bash
 
 ##### Python 2.7:
 
     wget https://raw.github.com/Wolfterro/Youtube-DL-Script/master/Youtube-DL-Script-Python2.py
     chmod +x Youtube-DL-Script-Python2.py
+    ./Youtube-DL-Script-Python2.py
 
 ##### Python 3.x:
 
     wget https://raw.github.com/Wolfterro/Youtube-DL-Script/master/Youtube-DL-Script-Python3.py
     chmod +x Youtube-DL-Script-Python3.py
+    ./Youtube-DL-Script-Python3.py
 
 ##### Ruby:
 
     wget https://raw.github.com/Wolfterro/Youtube-DL-Script/master/Youtube-DL-Script-Ruby.rb
     chmod +x Youtube-DL-Script-Ruby.rb
+    ./Youtube-DL-Script-Ruby.rb
 
 ###### Os scripts localizados na área principal da branch são as versões mais atualizadas do script. Para utilizar as versões antigas, vá até a pasta 'old' da linguagem desejada e lá estarão as versões mais antigas do script.
