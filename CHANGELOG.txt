@@ -7,6 +7,11 @@ Script para Youtube-DL: Baixar Vídeos e Músicas em Diversos Formatos
 CHANGELOG:
 ==========
 
+VERSÃO 1.7.0 - Bash / Python2 / Python3 / Ruby:
+- Adicionada função de download e instalação do Youtube-Dl
+
+#-------------------------------------------------------------------------------------------------------------------
+
 VERSÃO 1.6.0 - Bash / Python2 / Python3 / Ruby:
 - Adicionado modo-repetição no script! Ao final de uma operação do script, ele irá perguntar se deseja fazer outra.
 - Corrigido erro de localização da pasta atual do script após ter feito uma operação onde o arquivo tenha sido salvo na pasta 'Música' ou 'Vídeos'.

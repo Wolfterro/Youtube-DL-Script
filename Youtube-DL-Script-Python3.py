@@ -7,8 +7,8 @@ os.path.expanduser("~")
 
 #---------------------------------------------------
 # Criado por: Wolfterro
-# Versão: 1.6.0 - Python 3.x
-# Data: 14/12/2015
+# Versão: 1.7.0 - Python 3.x
+# Data: 04/01/2016
 #---------------------------------------------------
 
 #---------------------------------------------------
@@ -42,7 +42,7 @@ def youtube_dl_script():
 	# Apresentação inicial do script
 	#---------------------------------------------------
 	print("")
-	print("Script para Youtube-Dl: Baixar Vídeos e Músicas em Diversos Formatos (1.6.0 - Python 3.x)")
+	print("Script para Youtube-Dl: Baixar Vídeos e Músicas em Diversos Formatos (1.7.0 - Python 3.x)")
 	print("=========================================================================================")
 	print("")
 	print("* Este script requer o Youtube-Dl instalado e configurado para ser reconhecido como comando do shell")
@@ -255,6 +255,38 @@ def youtube_dl_script():
 		os.system("youtube-dl --update")
 		os.system("sleep 5")
 	#------------------------------------------------------------
+	def option_function_install():
+		os.chdir(expanduser("~/"))
+		print("Baixando youtube-dl usando 'wget'...")
+		print("")
+		os.system("wget -O youtube-dl 'https://yt-dl.org/downloads/latest/youtube-dl'")
+		print("Aplicando permissões de execução...")
+		print("")
+		os.system("chmod a+rx youtube-dl")
+		print("Movendo para a pasta '/usr/bin'...")
+		print("")
+
+		if os.geteuid() != 0:
+			print("É necessário privilégios de root para mover o arquivo para a pasta selecionada!")
+			print("Deseja utilizar o comando 'sudo' para mover 'youtube-dl' para '/usr/bin'? [S/N]")
+			MOVEFILE = input("Digite 'S' para sim ou 'N' para não: ")
+			MOVEFILE = MOVEFILE.upper()
+
+			if MOVEFILE == "S":
+				os.system("sudo mv youtube-dl /usr/bin")
+				print("")
+				print("Youtube-Dl está instalado!")
+				os.system("sleep 5")
+			else:
+				print("")
+				print("O arquivo não pôde ser movido por falta de permissão! Saindo da Instalação...")
+				os.system("rm youtube-dl")
+				os.system("sleep 5")
+		else:
+			os.system("mv youtube-dl /usr/bin")
+			print("Youtube-Dl está instalado!")
+			os.system("sleep 5")
+	#------------------------------------------------------------
 	def option_conversion_formats():
 		print("Qual formato deseja que o vídeo seja convertido?")
 		print("================================================")
@@ -294,6 +326,9 @@ def youtube_dl_script():
 	print("Como deseja salvar o vídeo?")
 	print("===========================")
 	print("")
+	print("Instalação:")
+	print("(0) Instalar Youtube-Dl")
+	print("")
 	print("Formatos de vídeo (nativos):")
 	print("(1) Arquivo de vídeo em formato .MP4")
 	print("(2) Arquivo de vídeo em formato .MKV")
@@ -311,7 +346,10 @@ def youtube_dl_script():
 	print("")
 	ESCOLHA = input("Escolha uma das opções acima: ")
 	print("")
-	if ESCOLHA == "1":
+	if ESCOLHA == "0":
+		option_function_install()
+		repeat_script()
+	elif ESCOLHA == "1":
 		main_function_get_id()
 		video_function_path()
 		video_function_default_mp4()

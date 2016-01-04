@@ -2,8 +2,8 @@
 
 #---------------------------------------------------
 # Criado por: Wolfterro
-# Versão: 1.6.0 - Bash
-# Data: 14/12/2015
+# Versão: 1.7.0 - Bash
+# Data: 04/01/2016
 #---------------------------------------------------
 
 #---------------------------------------------------
@@ -49,7 +49,7 @@ youtube_dl_script() {
 	# Apresentação inicial do script
 	#---------------------------------------------------
 	echo ""
-	echo "Script para Youtube-Dl: Baixar Vídeos e Músicas em Diversos Formatos (1.6.0 - Bash)"
+	echo "Script para Youtube-Dl: Baixar Vídeos e Músicas em Diversos Formatos (1.7.0 - Bash)"
 	echo "==================================================================================="
 	echo ""
 	echo "* Este script requer o Youtube-Dl instalado e configurado para ser reconhecido como comando do shell"
@@ -290,6 +290,46 @@ youtube_dl_script() {
 		sleep 5
 	}
 	#------------------------------------------------------------
+	option_function_install(){
+		cd ~/
+
+		echo "Baixando youtube-dl usando 'wget'..."
+		echo ""
+		wget -O youtube-dl 'https://yt-dl.org/downloads/latest/youtube-dl'
+		echo "Aplicando permissões de execução..."
+		echo ""
+		chmod a+rx youtube-dl
+		echo "Movendo para a pasta '/usr/bin'..."
+		echo ""
+
+		if [[ $EUID -ne 0 ]]; then
+			echo "É necessário privilégios de root para mover o arquivo para a pasta selecionada!"
+			echo "Deseja utilizar o comando 'sudo' para mover 'youtube-dl' para '/usr/bin'? [S/N]"
+			read MOVEFILE
+			MOVEFILEM="${MOVEFILE^^}"
+
+			case "$MOVEFILEM" in
+				"S")
+					sudo mv youtube-dl /usr/bin
+					echo ""
+					echo "Youtube-Dl está instalado!"
+					sleep 5
+					;;
+				*)
+					echo ""
+					echo "O arquivo não pôde ser movido por falta de permissão! Saindo da Instalação..."
+					rm youtube-dl
+					sleep 5
+					;;
+				esac
+		else
+			mv youtube-dl /usr/bin
+			echo ""
+			echo "Youtube-Dl está instalado!"
+			sleep 5
+		fi
+	}
+	#------------------------------------------------------------
 	option_conversion_formats(){
 		echo "Qual formato deseja que o vídeo seja convertido?"
 		echo "================================================"
@@ -332,6 +372,9 @@ youtube_dl_script() {
 	echo "Como deseja salvar o vídeo?"
 	echo "==========================="
 	echo ""
+	echo "Instalação:"
+	echo "(0) Instalar Youtube-Dl"
+	echo ""
 	echo "Formatos de vídeo (nativos):"
 	echo "(1) Arquivo de vídeo em formato .MP4"
 	echo "(2) Arquivo de vídeo em formato .MKV"
@@ -349,7 +392,10 @@ youtube_dl_script() {
 	echo ""
 	read ESCOLHA
 	echo ""
-	if [[ $ESCOLHA -eq 1 ]]; then
+	if [[ $ESCOLHA -eq 0 ]]; then
+		option_function_install
+		repeat_script
+	elif [[ $ESCOLHA -eq 1 ]]; then
 		main_function_get_id
 		video_function_path
 		video_function_default_mp4

@@ -3,8 +3,8 @@
 
 #---------------------------------------------------
 # Criado por: Wolfterro
-# Versão: 1.6.0 - Ruby
-# Data: 14/12/2015
+# Versão: 1.7.0 - Ruby
+# Data: 04/01/2016
 #---------------------------------------------------
 
 #---------------------------------------------------
@@ -42,7 +42,7 @@ def youtube_dl_script()
 	# Apresentação inicial do script
 	#---------------------------------------------------
 	puts ""
-	puts "Script para Youtube-Dl: Baixar Vídeos e Músicas em Diversos Formatos (1.6.0 - Ruby)"
+	puts "Script para Youtube-Dl: Baixar Vídeos e Músicas em Diversos Formatos (1.7.0 - Ruby)"
 	puts "==================================================================================="
 	puts ""
 	puts "* Este script requer o Youtube-Dl instalado e configurado para ser reconhecido como comando do shell"
@@ -321,6 +321,50 @@ def youtube_dl_script()
 		%x( #{sleep} )
 	end
 	#------------------------------------------------------------
+	def option_function_install()
+		Dir.chdir (File.expand_path("~/"))
+		cmd_download = "wget -O youtube-dl 'https://yt-dl.org/downloads/latest/youtube-dl'"
+		cmd_permission = "chmod a+rx youtube-dl"
+		cmd_move = "mv youtube-dl /usr/bin"
+		cmd_move_sudo = "sudo mv youtube-dl /usr/bin"
+		cmd_remove = "rm youtube-dl"
+		sleep = "sleep 5"
+
+		puts "Baixando youtube-dl usando 'wget'..."
+		puts ""
+		%x( #{cmd_download} )
+		puts "Aplicando permissões de execução..."
+		puts ""
+		%x( #{cmd_permission} )
+		puts "Movendo para a pasta '/usr/bin'..."
+		puts ""
+
+		if Process.uid != 0
+			puts "É necessário privilégios de root para mover o arquivo para a pasta selecionada!"
+			puts "Deseja utilizar o comando 'sudo' para mover 'youtube-dl' para '/usr/bin'? [S/N]"
+			print "Digite 'S' para sim ou 'N' para não: "
+			movefile = gets.chomp
+			movefile = movefile.upcase
+
+			if movefile == "S"
+				%x( #{cmd_move_sudo} )
+				puts ""
+				puts "Youtube-Dl está instalado!"
+				%x( #{sleep} )
+			else
+				puts ""
+				puts "O arquivo não pôde ser movido por falta de permissão! Saindo da Instalação..."
+				%x( #{cmd_remove} )
+				%x( #{sleep} )
+			end
+		else
+			%x( #{cmd_move} )
+			puts ""
+			puts "Youtube-Dl está instalado!"
+			%x( #{sleep} )
+		end
+	end
+	#------------------------------------------------------------
 	def option_conversion_formats()
 		puts "Qual formato deseja que o vídeo seja convertido?"
 		puts "================================================"
@@ -365,6 +409,9 @@ def youtube_dl_script()
 	puts "Como deseja salvar o vídeo?"
 	puts "==========================="
 	puts ""
+	puts "Instalação:"
+	puts "(0) Instalar Youtube-Dl"
+	puts ""
 	puts "Formatos de vídeo (nativos):"
 	puts "(1) Arquivo de vídeo em formato .MP4"
 	puts "(2) Arquivo de vídeo em formato .MKV"
@@ -383,7 +430,10 @@ def youtube_dl_script()
 	print "Escolha uma das opções acima: "
 	escolha = gets.chomp
 	puts ""
-	if escolha == "1"
+	if escolha == "0"
+		option_function_install()
+		repeat_script()
+	elsif escolha == "1"
 		main_function_get_id()
 		video_function_path()
 		video_function_default_mp4()
