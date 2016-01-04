@@ -49,7 +49,7 @@ O script se encontra em 4 versões diferentes:
 - Ruby<br />
 - ffmpeg / libav-tools<br />
 
-###### Este script não é um programa standalone (isto é, ele não faz as operações de download e de conversão, é apenas um frontend para um programa já existente), portanto **É NECESSÁRIO** que o [Youtube-DL](https://github.com/rg3/youtube-dl/) esteja instalado e que seja devidamente reconhecido como comando do shell.<br />
+###### Este script não é um programa standalone (isto é, ele não faz as operações de download e de conversão, é apenas um frontend para um programa já existente), portanto **É NECESSÁRIO** que o [Youtube-DL](https://github.com/rg3/youtube-dl/) esteja instalado e que seja devidamente reconhecido como comando do shell. Caso não o tenha instalado, poderá utilizar a opção de instalação do Youtube-DL presente no script.<br />
 
 ###### É necessário também que o programa ffmpeg ou libav esteja instalado no sistema, ele será responsável pelas conversões de vídeo e áudio se assim forem necessárias. Certifique-se de possuir uma versão atualizada de um destes programas.<br />
 
