@@ -55,7 +55,7 @@ O script se encontra em 4 versões diferentes:
 
 ###### Se preferir usar as versões escritas em Python, certifique-se de usar a versão correta com relação a versão instalada em seu computador, **o script em Python 3 não funcionará se você apenas tiver o Python 2 instalado em seu sistema e vice-versa!**<br />
 
-### Download:
+### Download e Execução:
 
 ###### Usuários Linux (e talvez OSX) poderão baixar o script usando o comando 'wget' e dando as devidas permissões de execução com o comando 'chmod':
 
