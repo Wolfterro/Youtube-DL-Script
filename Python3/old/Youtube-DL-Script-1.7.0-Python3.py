@@ -7,8 +7,8 @@ os.path.expanduser("~")
 
 #---------------------------------------------------
 # Criado por: Wolfterro
-# Versão: 1.8.0 - Python 3.x
-# Data: 07/01/2016
+# Versão: 1.7.0 - Python 3.x
+# Data: 04/01/2016
 #---------------------------------------------------
 
 #---------------------------------------------------
@@ -39,22 +39,10 @@ def youtube_dl_script():
 	#---------------------------------------------------
 
 	#---------------------------------------------------
-	# Função de caminho alternativo
-	#---------------------------------------------------
-	def alt_path():
-		print("")
-		print("Por favor, especifique o caminho desejado (Exemplo: /home/user/playlist):")
-		print("=========================================================================")
-		global ALT_PATH_SAVE
-		ALT_PATH_SAVE = input("Insira o caminho desejado: ")
-		print("")
-	#---------------------------------------------------
-
-	#---------------------------------------------------
 	# Apresentação inicial do script
 	#---------------------------------------------------
 	print("")
-	print("Script para Youtube-Dl: Baixar Vídeos e Músicas em Diversos Formatos (1.8.0 - Python 3.x)")
+	print("Script para Youtube-Dl: Baixar Vídeos e Músicas em Diversos Formatos (1.7.0 - Python 3.x)")
 	print("=========================================================================================")
 	print("")
 	print("* Este script requer o Youtube-Dl instalado e configurado para ser reconhecido como comando do shell")
@@ -84,14 +72,12 @@ def youtube_dl_script():
 		print("Qual pasta deseja armazenar o arquivo de vídeo?")
 		print("===============================================")
 		print("")
-		print("(1) Pasta 'home' do usuário atual (padrão)")
-		print("(2) Pasta 'Vídeos' do usuário atual")
-		print("(3) Pasta atual do script")
-		print("(4) Especificar o caminho desejado")
+		print("(1) Pasta 'Vídeos' do usuário atual")
+		print("(2) Pasta atual do script")
 		print("")
 		LOCATIONV = input("Selecione uma das opções acima: ")
 		#---------------------------------------------------
-		if LOCATIONV == "2": 
+		if LOCATIONV == "1": 
 			print("")
 			print("Verificando a existência da pasta 'Vídeos'...")
 			VIDEOEXIST = os.path.exists(expanduser("~/Vídeos"))
@@ -126,30 +112,10 @@ def youtube_dl_script():
 					print("")
 				#----------------------------------------------
 			#--------------------------------------------------
-		elif LOCATIONV == "3":
+		else:
 			os.chdir(expanduser(location_script))
 			print("")
 			print("A pasta atual do script foi selecionada!")
-			print("")
-		elif LOCATIONV == "4":
-			alt_path()
-			print("Verificando a existência do caminho '" + ALT_PATH_SAVE + "' ...")
-			ALT_PATH_EXIST = os.path.exists(expanduser(ALT_PATH_SAVE))
-
-			if ALT_PATH_EXIST == False:
-				print("")
-				print("O caminho especificado não existe! A pasta 'home' do usuário atual será selecionada!")
-				os.chdir(expanduser("~/"))
-				print("")
-			else:
-				os.chdir(expanduser(ALT_PATH_SAVE))
-				print("")
-				print("O caminho '" + ALT_PATH_SAVE + "' foi selecionado!")
-				print("")
-		else:
-			os.chdir(expanduser("~/"))
-			print("")
-			print("A pasta 'home' do usuário atual foi selecionada!")
 			print("")
 	#---------------------------------------------------
 
@@ -160,14 +126,12 @@ def youtube_dl_script():
 		print("Qual pasta deseja armazenar o arquivo de áudio?")
 		print("===============================================")
 		print("")
-		print("(1) Pasta 'home' do usuário atual (padrão)")
-		print("(2) Pasta 'Música' do usuário atual")
-		print("(3) Pasta atual do script")
-		print("(4) Especificar o caminho desejado")
+		print("(1) Pasta 'Música' do usuário atual")
+		print("(2) Pasta atual do script")
 		print("")
 		LOCATIONM = input("Selecione uma das opções acima: ")
 		#---------------------------------------------------
-		if LOCATIONM == "2": 
+		if LOCATIONM == "1": 
 			print("")
 			print("Verificando a existência da pasta 'Música'...")
 			MUSICEXIST = os.path.exists(expanduser("~/Música"))
@@ -202,30 +166,10 @@ def youtube_dl_script():
 					print("")
 				#----------------------------------------------
 			#--------------------------------------------------
-		elif LOCATIONM == "3":
+		else:
 			os.chdir(expanduser(location_script))
 			print("")
 			print("A pasta atual do script foi selecionada!")
-			print("")
-		elif LOCATIONM == "4":
-			alt_path()
-			print("Verificando a existência do caminho '" + ALT_PATH_SAVE + "' ...")
-			ALT_PATH_EXIST = os.path.exists(expanduser(ALT_PATH_SAVE))
-
-			if ALT_PATH_EXIST == False:
-				print("")
-				print("O caminho especificado não existe! A pasta 'home' do usuário atual será selecionada!")
-				os.chdir(expanduser("~/"))
-				print("")
-			else:
-				os.chdir(expanduser(ALT_PATH_SAVE))
-				print("")
-				print("O caminho '" + ALT_PATH_SAVE + "' foi selecionado!")
-				print("")
-		else:
-			os.chdir(expanduser("~/"))
-			print("")
-			print("A pasta 'home' do usuário atual foi selecionada!")
 			print("")
 	#---------------------------------------------------
 

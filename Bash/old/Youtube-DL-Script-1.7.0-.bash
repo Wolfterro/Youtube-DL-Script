@@ -2,8 +2,8 @@
 
 #---------------------------------------------------
 # Criado por: Wolfterro
-# Versão: 1.8.0 - Bash
-# Data: 07/01/2016
+# Versão: 1.7.0 - Bash
+# Data: 04/01/2016
 #---------------------------------------------------
 
 #---------------------------------------------------
@@ -46,22 +46,10 @@ youtube_dl_script() {
 	#---------------------------------------------------
 
 	#---------------------------------------------------
-	# Função de caminho alternativo
-	#---------------------------------------------------
-	alt_path(){
-		echo ""
-		echo "Por favor, especifique o caminho desejado (Exemplo: /home/user/playlist):"
-		echo "========================================================================="
-		read ALT_PATH_SAVE
-		echo ""
-	}
-	#---------------------------------------------------
-
-	#---------------------------------------------------
 	# Apresentação inicial do script
 	#---------------------------------------------------
 	echo ""
-	echo "Script para Youtube-Dl: Baixar Vídeos e Músicas em Diversos Formatos (1.8.0 - Bash)"
+	echo "Script para Youtube-Dl: Baixar Vídeos e Músicas em Diversos Formatos (1.7.0 - Bash)"
 	echo "==================================================================================="
 	echo ""
 	echo "* Este script requer o Youtube-Dl instalado e configurado para ser reconhecido como comando do shell"
@@ -91,14 +79,12 @@ youtube_dl_script() {
 		echo "Qual pasta deseja armazenar o arquivo de vídeo?"
 		echo "==============================================="
 		echo ""
-		echo "(1) Pasta 'home' do usuário atual (padrão)"
-		echo "(2) Pasta 'Vídeos' do usuário atual"
-		echo "(3) Pasta atual do script"
-		echo "(4) Especificar o caminho desejado"
+		echo "(1) Pasta 'Vídeos' do usuário atual"
+		echo "(2) Pasta atual do script"
 		echo ""
 		read LOCATIONV
 		#---------------------------------------------------
-		if [[ $LOCATIONV -eq 2 ]] ; then
+		if [[ $LOCATIONV -eq 1 ]] ; then
 			echo ""
 			echo "Verificando a existência da pasta 'Vídeos'..."
 			#------------------------------------------------
@@ -144,30 +130,10 @@ youtube_dl_script() {
 				#----------------------------------------------
 			#--------------------------------------------------
 			fi
-		elif [[ $LOCATIONV -eq 3 ]] ; then
+		else
 			cd $LOCATION_SCRIPT
 			echo ""
 			echo "A pasta atual do script foi selecionada!"
-			echo ""
-		elif [[ $LOCATIONV -eq 4 ]] ; then
-			alt_path
-			echo "Verificando a existência do caminho '"$ALT_PATH_SAVE"' ..."
-			
-			if [ -e $ALT_PATH_SAVE ] ; then
-				cd $ALT_PATH_SAVE
-				echo ""
-				echo "O caminho '"$ALT_PATH_SAVE"' foi selecionado!"
-				echo ""
-			else
-				echo ""
-				echo "O caminho especificado não existe! A pasta 'home' do usuário atual será selecionada!"
-				cd ~/
-				echo ""
-			fi
-		else
-			cd ~/
-			echo ""
-			echo "A pasta 'home' do usuário atual foi selecionada!"
 			echo ""
 		fi
 	}
@@ -180,14 +146,12 @@ youtube_dl_script() {
 		echo "Qual pasta deseja armazenar o arquivo de áudio?"
 		echo "==============================================="
 		echo ""
-		echo "(1) Pasta 'home' do usuário atual (padrão)"
-		echo "(2) Pasta 'Música' do usuário atual"
-		echo "(3) Pasta atual do script"
-		echo "(4) Especificar o caminho desejado"
+		echo "(1) Pasta 'Música' do usuário atual"
+		echo "(2) Pasta atual do script"
 		echo ""
 		read LOCATIONM
 		#---------------------------------------------------
-		if [[ $LOCATIONM -eq 2 ]]; then
+		if [[ $LOCATIONM -eq 1 ]]; then
 			echo ""
 			echo "Verificando a existência da pasta 'Música'..."
 			#------------------------------------------------
@@ -233,30 +197,10 @@ youtube_dl_script() {
 				#----------------------------------------------
 			#--------------------------------------------------
 			fi
-		elif [[ $LOCATIONM -eq 3 ]] ; then
+		else
 			cd $LOCATION_SCRIPT
 			echo ""
 			echo "A pasta atual do script foi selecionada!"
-			echo ""
-		elif [[ $LOCATIONM -eq 4 ]] ; then
-			alt_path
-			echo "Verificando a existência do caminho '"$ALT_PATH_SAVE"' ..."
-			
-			if [ -e $ALT_PATH_SAVE ] ; then
-				cd $ALT_PATH_SAVE
-				echo ""
-				echo "O caminho '"$ALT_PATH_SAVE"' foi selecionado!"
-				echo ""
-			else
-				echo ""
-				echo "O caminho especificado não existe! A pasta 'home' do usuário atual será selecionada!"
-				cd ~/
-				echo ""
-			fi
-		else
-			cd ~/
-			echo ""
-			echo "A pasta 'home' do usuário atual foi selecionada!"
 			echo ""
 		fi
 	}

@@ -7,8 +7,8 @@ os.path.expanduser("~")
 
 #---------------------------------------------------
 # Criado por: Wolfterro
-# Versão: 1.8.0 - Python 3.x
-# Data: 07/01/2016
+# Versão: 1.7.0 - Python 2.x
+# Data: 04/01/2016
 #---------------------------------------------------
 
 #---------------------------------------------------
@@ -24,76 +24,62 @@ def youtube_dl_script():
 	# Função de repetição do script
 	#---------------------------------------------------
 	def repeat_script():
-		print("")
-		print("Deseja realizar outra operação com o script? [S/N]")
-		REPEAT = input("Digite 'S' para sim ou 'N' para não: ")
+		print ""
+		print "Deseja realizar outra operação com o script? [S/N]"
+		REPEAT = raw_input("Digite 'S' para sim ou 'N' para não: ")
 		REPEAT = REPEAT.upper()
 		if REPEAT == "S":
 			os.system("clear")
 			youtube_dl_script()
 		else:
-			print("")
-			print("Saindo...")
-			print("")
+			print ""
+			print "Saindo..."
+			print ""
 			os.system("sleep 3")
-	#---------------------------------------------------
-
-	#---------------------------------------------------
-	# Função de caminho alternativo
-	#---------------------------------------------------
-	def alt_path():
-		print("")
-		print("Por favor, especifique o caminho desejado (Exemplo: /home/user/playlist):")
-		print("=========================================================================")
-		global ALT_PATH_SAVE
-		ALT_PATH_SAVE = input("Insira o caminho desejado: ")
-		print("")
 	#---------------------------------------------------
 
 	#---------------------------------------------------
 	# Apresentação inicial do script
 	#---------------------------------------------------
-	print("")
-	print("Script para Youtube-Dl: Baixar Vídeos e Músicas em Diversos Formatos (1.8.0 - Python 3.x)")
-	print("=========================================================================================")
-	print("")
-	print("* Este script requer o Youtube-Dl instalado e configurado para ser reconhecido como comando do shell")
-	print("* O pacote 'libav' deverá estar instalado para converter os arquivos baixados se assim for necessário")
-	print("* Caso não tenha o Youtube-Dl ou o pacote libav instalado, feche este script usando o comando Ctrl + C")
-	print("* Caso queira baixar o Youtube-Dl, visite o seguinte endereço: https://github.com/rg3/youtube-dl")
-	print("* Caso queira baixar o pacote libav, utilize o comando 'sudo apt-get install libav-tools', sem aspas")
-	print("* Utilize os formatos de conversão de vídeo caso o formato nativo escolhido não estiver disponível")
-	print("")
+	print ""
+	print "Script para Youtube-Dl: Baixar Vídeos e Músicas em Diversos Formatos (1.7.0 - Python 2.x)"
+	print "========================================================================================="
+	print ""
+	print "* Este script requer o Youtube-Dl instalado e configurado para ser reconhecido como comando do shell"
+	print "* O pacote 'libav' deverá estar instalado para converter os arquivos baixados se assim for necessário"
+	print "* Caso não tenha o Youtube-Dl ou o pacote libav instalado, feche este script usando o comando Ctrl + C"
+	print "* Caso queira baixar o Youtube-Dl, visite o seguinte endereço: https://github.com/rg3/youtube-dl"
+	print "* Caso queira baixar o pacote libav, utilize o comando 'sudo apt-get install libav-tools', sem aspas"
+	print "* Utilize os formatos de conversão de vídeo caso o formato nativo escolhido não estiver disponível"
+	print ""
 	#---------------------------------------------------
 
 	#---------------------------------------------------
 	# Leitura da ID do vídeo desejado
 	#---------------------------------------------------
 	def main_function_get_id():
-		print("Por favor, digite APENAS a ID do vídeo desejado (Exemplo: https://www.youtube.com/watch?v=ID_DO_VÍDEO):")
-		print("=======================================================================================================")
+		print "Por favor, digite APENAS a ID do vídeo desejado (Exemplo: https://www.youtube.com/watch?v=ID_DO_VÍDEO):"
+		print "======================================================================================================="
 		global ID
-		ID = input("Insira a ID do vídeo: ")
-		print("")
+		ID = raw_input("Insira a ID do vídeo: ")
+		print ""
 	#---------------------------------------------------
 
 	#---------------------------------------------------
 	# Função comum para vídeos: caminho
 	#---------------------------------------------------
 	def video_function_path():
-		print("Qual pasta deseja armazenar o arquivo de vídeo?")
-		print("===============================================")
-		print("")
-		print("(1) Pasta 'home' do usuário atual (padrão)")
-		print("(2) Pasta 'Vídeos' do usuário atual")
-		print("(3) Pasta atual do script")
-		print("(4) Especificar o caminho desejado")
-		print("")
-		LOCATIONV = input("Selecione uma das opções acima: ")
+		print "Qual pasta deseja armazenar o arquivo de vídeo?"
+		print "==============================================="
+		print ""
+		print "(1) Pasta 'Vídeos' do usuário atual"
+		print "(2) Pasta atual do script"
+		print ""
+		LOCATIONV = raw_input("Selecione uma das opções acima: ")
 		#---------------------------------------------------
-		if LOCATIONV == "2": 
-			print("")
-			print("Verificando a existência da pasta 'Vídeos'...")
+		if LOCATIONV == "1": 
+			print ""
+			print "Verificando a existência da pasta 'Vídeos'..."
 			VIDEOEXIST = os.path.exists(expanduser("~/Vídeos"))
 			#------------------------------------------------
 			if VIDEOEXIST == True:
@@ -103,73 +89,51 @@ def youtube_dl_script():
 			#------------------------------------------------
 			if EXISTV == True:
 				os.chdir(expanduser("~/Vídeos"))
-				print("")
-				print("A pasta 'Vídeos' foi selecionada!")
-				print("")
+				print ""
+				print "A pasta 'Vídeos' foi selecionada!"
+				print ""
 			else:
-				print("")
-				print("A pasta 'Vídeos' não existe! Deseja criá-la? [S/N]")
-				CREATEV = input("Digite 'S' para sim ou 'N' para não: ")
+				print ""
+				print "A pasta 'Vídeos' não existe! Deseja criá-la? [S/N]"
+				CREATEV = raw_input("Digite 'S' para sim ou 'N' para não: ")
 				CREATEV = CREATEV.upper()
 				#---------------------------------------------
 				if CREATEV == "S":
 					os.chdir(expanduser("~/"))
 					os.system(expanduser("mkdir Vídeos"))
 					os.chdir(expanduser("~/Vídeos"))
-					print("")
-					print("A pasta 'Vídeos' foi criada e selecionada!")
-					print("")
+					print ""
+					print "A pasta 'Vídeos' foi criada e selecionada!"
+					print ""
 				else:
 					os.chdir(expanduser(location_script))
-					print("")
-					print("Neste caso, a pasta atual do script será selecionada!")
-					print("")
+					print ""
+					print "Neste caso, a pasta atual do script será selecionada!"
+					print ""
 				#----------------------------------------------
 			#--------------------------------------------------
-		elif LOCATIONV == "3":
-			os.chdir(expanduser(location_script))
-			print("")
-			print("A pasta atual do script foi selecionada!")
-			print("")
-		elif LOCATIONV == "4":
-			alt_path()
-			print("Verificando a existência do caminho '" + ALT_PATH_SAVE + "' ...")
-			ALT_PATH_EXIST = os.path.exists(expanduser(ALT_PATH_SAVE))
-
-			if ALT_PATH_EXIST == False:
-				print("")
-				print("O caminho especificado não existe! A pasta 'home' do usuário atual será selecionada!")
-				os.chdir(expanduser("~/"))
-				print("")
-			else:
-				os.chdir(expanduser(ALT_PATH_SAVE))
-				print("")
-				print("O caminho '" + ALT_PATH_SAVE + "' foi selecionado!")
-				print("")
 		else:
-			os.chdir(expanduser("~/"))
-			print("")
-			print("A pasta 'home' do usuário atual foi selecionada!")
-			print("")
+			os.chdir(expanduser(location_script))
+			print ""
+			print "A pasta atual do script foi selecionada!"
+			print ""
 	#---------------------------------------------------
 
 	#---------------------------------------------------
 	# Função comum para músicas: caminho
 	#---------------------------------------------------
 	def audio_function_path():
-		print("Qual pasta deseja armazenar o arquivo de áudio?")
-		print("===============================================")
-		print("")
-		print("(1) Pasta 'home' do usuário atual (padrão)")
-		print("(2) Pasta 'Música' do usuário atual")
-		print("(3) Pasta atual do script")
-		print("(4) Especificar o caminho desejado")
-		print("")
-		LOCATIONM = input("Selecione uma das opções acima: ")
+		print "Qual pasta deseja armazenar o arquivo de áudio?"
+		print "==============================================="
+		print ""
+		print "(1) Pasta 'Música' do usuário atual"
+		print "(2) Pasta atual do script"
+		print ""
+		LOCATIONM = raw_input("Selecione uma das opções acima: ")
 		#---------------------------------------------------
-		if LOCATIONM == "2": 
-			print("")
-			print("Verificando a existência da pasta 'Música'...")
+		if LOCATIONM == "1": 
+			print ""
+			print "Verificando a existência da pasta 'Música'..."
 			MUSICEXIST = os.path.exists(expanduser("~/Música"))
 			#------------------------------------------------
 			if MUSICEXIST == True:
@@ -179,54 +143,34 @@ def youtube_dl_script():
 			#------------------------------------------------
 			if EXISTM == True:
 				os.chdir(expanduser("~/Música"))
-				print("")
-				print("A pasta 'Música' foi selecionada!")
-				print("")
+				print ""
+				print "A pasta 'Música' foi selecionada!"
+				print ""
 			else:
-				print("")
-				print("A pasta 'Música' não existe! Deseja criá-la? [S/N]")
-				CREATEM = input("Digite 'S' para sim ou 'N' para não: ")
+				print ""
+				print "A pasta 'Música' não existe! Deseja criá-la? [S/N]"
+				CREATEM = raw_input("Digite 'S' para sim ou 'N' para não: ")
 				CREATEM = CREATEM.upper()
 				#---------------------------------------------
 				if CREATEM == "S":
 					os.chdir(expanduser("~/"))
 					os.system(expanduser("mkdir Música"))
 					os.chdir(expanduser("~/Música"))
-					print("")
-					print("A pasta 'Música' foi criada e selecionada!")
-					print("")
+					print ""
+					print "A pasta 'Música' foi criada e selecionada!"
+					print ""
 				else:
 					os.chdir(expanduser(location_script))
-					print("")
-					print("Neste caso, a pasta atual do script será selecionada!")
-					print("")
+					print ""
+					print "Neste caso, a pasta atual do script será selecionada!"
+					print ""
 				#----------------------------------------------
 			#--------------------------------------------------
-		elif LOCATIONM == "3":
-			os.chdir(expanduser(location_script))
-			print("")
-			print("A pasta atual do script foi selecionada!")
-			print("")
-		elif LOCATIONM == "4":
-			alt_path()
-			print("Verificando a existência do caminho '" + ALT_PATH_SAVE + "' ...")
-			ALT_PATH_EXIST = os.path.exists(expanduser(ALT_PATH_SAVE))
-
-			if ALT_PATH_EXIST == False:
-				print("")
-				print("O caminho especificado não existe! A pasta 'home' do usuário atual será selecionada!")
-				os.chdir(expanduser("~/"))
-				print("")
-			else:
-				os.chdir(expanduser(ALT_PATH_SAVE))
-				print("")
-				print("O caminho '" + ALT_PATH_SAVE + "' foi selecionado!")
-				print("")
 		else:
-			os.chdir(expanduser("~/"))
-			print("")
-			print("A pasta 'home' do usuário atual foi selecionada!")
-			print("")
+			os.chdir(expanduser(location_script))
+			print ""
+			print "A pasta atual do script foi selecionada!"
+			print ""
 	#---------------------------------------------------
 
 	#---------------------------------------------------
@@ -313,48 +257,48 @@ def youtube_dl_script():
 	#------------------------------------------------------------
 	def option_function_install():
 		os.chdir(expanduser("~/"))
-		print("Baixando youtube-dl usando 'wget'...")
-		print("")
+		print "Baixando youtube-dl usando 'wget'..."
+		print ""
 		os.system("wget -O youtube-dl 'https://yt-dl.org/downloads/latest/youtube-dl'")
-		print("Aplicando permissões de execução...")
-		print("")
+		print "Aplicando permissões de execução..."
+		print ""
 		os.system("chmod a+rx youtube-dl")
-		print("Movendo para a pasta '/usr/bin'...")
-		print("")
+		print "Movendo para a pasta '/usr/bin'..."
+		print ""
 
 		if os.geteuid() != 0:
-			print("É necessário privilégios de root para mover o arquivo para a pasta selecionada!")
-			print("Deseja utilizar o comando 'sudo' para mover 'youtube-dl' para '/usr/bin'? [S/N]")
-			MOVEFILE = input("Digite 'S' para sim ou 'N' para não: ")
+			print "É necessário privilégios de root para mover o arquivo para a pasta selecionada!"
+			print "Deseja utilizar o comando 'sudo' para mover 'youtube-dl' para '/usr/bin'? [S/N]"
+			MOVEFILE = raw_input("Digite 'S' para sim ou 'N' para não: ")
 			MOVEFILE = MOVEFILE.upper()
 
 			if MOVEFILE == "S":
 				os.system("sudo mv youtube-dl /usr/bin")
-				print("")
-				print("Youtube-Dl está instalado!")
+				print ""
+				print "Youtube-Dl está instalado!"
 				os.system("sleep 5")
 			else:
-				print("")
-				print("O arquivo não pôde ser movido por falta de permissão! Saindo da Instalação...")
+				print ""
+				print "O arquivo não pôde ser movido por falta de permissão! Saindo da Instalação..."
 				os.system("rm youtube-dl")
 				os.system("sleep 5")
 		else:
 			os.system("mv youtube-dl /usr/bin")
-			print("Youtube-Dl está instalado!")
+			print "Youtube-Dl está instalado!"
 			os.system("sleep 5")
 	#------------------------------------------------------------
 	def option_conversion_formats():
-		print("Qual formato deseja que o vídeo seja convertido?")
-		print("================================================")
-		print("")
-		print("Formatos de vídeo (conversão):")
-		print("(1) Arquivo de vídeo em formato .MP4")
-		print("(2) Arquivo de vídeo em formato .MKV")
-		print("(3) Arquivo de vídeo em formato .WEBM")
-		print("(4) Arquivo de vídeo em formato .AVI")
-		print("")
-		ESCOLHACONVERSAO = input("Escolha uma das opções acima: ")
-		print("")
+		print "Qual formato deseja que o vídeo seja convertido?"
+		print "================================================"
+		print ""
+		print "Formatos de vídeo (conversão):"
+		print "(1) Arquivo de vídeo em formato .MP4"
+		print "(2) Arquivo de vídeo em formato .MKV"
+		print "(3) Arquivo de vídeo em formato .WEBM"
+		print "(4) Arquivo de vídeo em formato .AVI"
+		print ""
+		ESCOLHACONVERSAO = raw_input("Escolha uma das opções acima: ")
+		print ""
 		if ESCOLHACONVERSAO == "1":
 			main_function_get_id()
 			video_function_path()
@@ -372,36 +316,36 @@ def youtube_dl_script():
 			video_function_path()
 			video_function_avi_conversion()
 		else:
-			print("Esta não é uma opção válida!")
+			print "Esta não é uma opção válida!"
 			os.system("sleep 5")
 	#------------------------------------------------------------
 
 	#------------------------------------------------------------
 	# Opções para o salvamento do vídeo selecionado
 	#------------------------------------------------------------
-	print("Como deseja salvar o vídeo?")
-	print("===========================")
-	print("")
-	print("Instalação:")
-	print("(0) Instalar Youtube-Dl")
-	print("")
-	print("Formatos de vídeo (nativos):")
-	print("(1) Arquivo de vídeo em formato .MP4")
-	print("(2) Arquivo de vídeo em formato .MKV")
-	print("(3) Arquivo de vídeo em formato .WEBM")
-	print("(4) Arquivo de vídeo em formato .AVI")
-	print("")
-	print("Formatos de áudio:")
-	print("(5) Arquivo de música em formato .MP3")
-	print("(6) Arquivo de música em formato .WAV")
-	print("")
-	print("Opções do script:")
-	print("(7) Formatos de Conversão de Vídeo")
-	print("(8) Atualizar Youtube-Dl")
-	print("(9) Sair do Youtube-Dl Script")
-	print("")
-	ESCOLHA = input("Escolha uma das opções acima: ")
-	print("")
+	print "Como deseja salvar o vídeo?"
+	print "==========================="
+	print ""
+	print "Instalação:"
+	print "(0) Instalar Youtube-Dl"
+	print ""
+	print "Formatos de vídeo (nativos):"
+	print "(1) Arquivo de vídeo em formato .MP4"
+	print "(2) Arquivo de vídeo em formato .MKV"
+	print "(3) Arquivo de vídeo em formato .WEBM"
+	print "(4) Arquivo de vídeo em formato .AVI"
+	print ""
+	print "Formatos de áudio:"
+	print "(5) Arquivo de música em formato .MP3"
+	print "(6) Arquivo de música em formato .WAV"
+	print ""
+	print "Opções do script:"
+	print "(7) Formatos de Conversão de Vídeo"
+	print "(8) Atualizar Youtube-Dl"
+	print "(9) Sair do Youtube-Dl Script"
+	print ""
+	ESCOLHA = raw_input("Escolha uma das opções acima: ")
+	print ""
 	if ESCOLHA == "0":
 		option_function_install()
 		repeat_script()
@@ -442,11 +386,11 @@ def youtube_dl_script():
 		option_function_update()
 		repeat_script()
 	elif ESCOLHA == "9":
-		print("Saindo...")
-		print("")
+		print "Saindo..."
+		print ""
 		os.system("sleep 3")
 	else:
-		print("Esta não é uma opção válida!")
+		print "Esta não é uma opção válida!"
 		os.system("sleep 5")
 		repeat_script()
 #------------------------------------------------------------

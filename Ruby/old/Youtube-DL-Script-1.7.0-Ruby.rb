@@ -3,8 +3,8 @@
 
 #---------------------------------------------------
 # Criado por: Wolfterro
-# Versão: 1.8.0 - Ruby
-# Data: 07/01/2016
+# Versão: 1.7.0 - Ruby
+# Data: 04/01/2016
 #---------------------------------------------------
 
 #---------------------------------------------------
@@ -39,24 +39,10 @@ def youtube_dl_script()
 	#---------------------------------------------------
 
 	#---------------------------------------------------
-	# Função de caminho alternativo
-	#---------------------------------------------------
-	def alt_path()
-		puts ""
-		puts "Por favor, especifique o caminho desejado (Exemplo: /home/user/playlist):"
-		puts "========================================================================="
-		$alt_path_save
-		print "Insira o caminho desejado: "
-		$alt_path_save = gets.chomp
-		puts ""
-	end
-	#---------------------------------------------------
-
-	#---------------------------------------------------
 	# Apresentação inicial do script
 	#---------------------------------------------------
 	puts ""
-	puts "Script para Youtube-Dl: Baixar Vídeos e Músicas em Diversos Formatos (1.8.0 - Ruby)"
+	puts "Script para Youtube-Dl: Baixar Vídeos e Músicas em Diversos Formatos (1.7.0 - Ruby)"
 	puts "==================================================================================="
 	puts ""
 	puts "* Este script requer o Youtube-Dl instalado e configurado para ser reconhecido como comando do shell"
@@ -87,15 +73,13 @@ def youtube_dl_script()
 		puts "Qual pasta deseja armazenar o arquivo de vídeo?"
 		puts "==============================================="
 		puts ""
-		puts "(1) Pasta 'home' do usuário atual (padrão)"
-		puts "(2) Pasta 'Vídeos' do usuário atual"
-		puts "(3) Pasta atual do script"
-		puts "(4) Especificar o caminho desejado"
+		puts "(1) Pasta 'Vídeos' do usuário atual"
+		puts "(2) Pasta atual do script"
 		puts ""
 		print "Selecione uma das opções acima: "
 		locationv = gets.chomp
 		#---------------------------------------------------
-		if locationv == "2"
+		if locationv == "1"
 			puts ""
 			puts "Verificando a existência da pasta 'Vídeos'..."
 			videoexist = Dir.exists?(File.expand_path("~/Vídeos" ))
@@ -128,31 +112,10 @@ def youtube_dl_script()
 				#----------------------------------------------
 			end
 			#--------------------------------------------------
-		elsif locationv == "3"
+		else
 			Dir.chdir (File.expand_path($location_script))
 			puts ""
 			puts "A pasta atual do script foi selecionada!"
-			puts ""
-		elsif locationv == "4"
-			alt_path()
-			puts "Verificando a existência do caminho '" + $alt_path_save + "' ..."
-			alt_path_exist = Dir.exists?(File.expand_path($alt_path_save))
-
-			if alt_path_exist == false
-				puts ""
-				puts "O caminho especificado não existe! A pasta 'home' do usuário atual será selecionada!"
-				Dir.chdir (File.expand_path("~/"))
-				puts ""
-			else
-				Dir.chdir (File.expand_path($alt_path_save))
-				puts ""
-				puts "O caminho '" + $alt_path_save + "' foi selecionado!"
-				puts ""
-			end
-		else
-			Dir.chdir (File.expand_path("~/"))
-			puts ""
-			puts "A pasta 'home' do usuário atual foi selecionada!"
 			puts ""
 		end
 	end
@@ -165,15 +128,13 @@ def youtube_dl_script()
 		puts "Qual pasta deseja armazenar o arquivo de áudio?"
 		puts "==============================================="
 		puts ""
-		puts "(1) Pasta 'home' do usuário atual (padrão)"
-		puts "(2) Pasta 'Música' do usuário atual"
-		puts "(3) Pasta atual do script"
-		puts "(4) Especificar o caminho desejado"
+		puts "(1) Pasta 'Música' do usuário atual"
+		puts "(2) Pasta atual do script"
 		puts ""
 		print "Selecione uma das opções acima: "
 		locationm = gets.chomp
 		#---------------------------------------------------
-		if locationm == "2"
+		if locationm == "1"
 			puts ""
 			puts "Verificando a existência da pasta 'Música'..."
 			musicexist = Dir.exists?(File.expand_path("~/Música" ))
@@ -206,31 +167,10 @@ def youtube_dl_script()
 				#----------------------------------------------
 			end
 			#--------------------------------------------------
-		elsif locationm == "3"
+		else
 			Dir.chdir (File.expand_path($location_script))
 			puts ""
 			puts "A pasta atual do script foi selecionada!"
-			puts ""
-		elsif locationm == "4"
-			alt_path()
-			puts "Verificando a existência do caminho '" + $alt_path_save + "' ..."
-			alt_path_exist = Dir.exists?(File.expand_path($alt_path_save))
-
-			if alt_path_exist == false
-				puts ""
-				puts "O caminho especificado não existe! A pasta 'home' do usuário atual será selecionada!"
-				Dir.chdir (File.expand_path("~/"))
-				puts ""
-			else
-				Dir.chdir (File.expand_path($alt_path_save))
-				puts ""
-				puts "O caminho '" + $alt_path_save + "' foi selecionado!"
-				puts ""
-			end
-		else
-			Dir.chdir (File.expand_path("~/"))
-			puts ""
-			puts "A pasta 'home' do usuário atual foi selecionada!"
 			puts ""
 		end
 	end
