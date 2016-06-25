@@ -7,6 +7,16 @@ Script para Youtube-DL: Baixar Vídeos e Músicas em Diversos Formatos
 CHANGELOG:
 ==========
 
+VERSÃO 2.0.0 - Python2 / Python3:
+- Script totalmente reescrito e melhor otimizado
+- Melhor suporte para atualização e download do youtube-dl
+- Adicionado suporte a Playlists
+- Melhor controle de erros durante a execução do programa
+
+NOTA: Apenas as versões em Python serão atualizadas daqui pra frente!
+
+#-------------------------------------------------------------------------------------------------------------------
+
 VERSÃO 1.8.0 - Bash / Python2 / Python3 / Ruby:
 - Adicionado novo caminho para salvamento de arquivo de áudio e vídeo.
 - Adicionada função de salvamento em caminho especificado pelo usuário.
